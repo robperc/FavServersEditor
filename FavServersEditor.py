@@ -52,7 +52,17 @@ class FavoriteServers(object):
 		self.items.insert(index, to_mv)
 
 	def swap(self, label1, label2):
-		pass
+		if (label1 not in self.labels) or (label2 not in self.labels) or (label1 == label2):
+			return
+		for index, item in enumerate(self.items):
+			if item['Name'] == label1:
+				index1 = index
+				item1  = item
+			if item['Name'] == label2:
+				index2 = index
+				item2  = item
+		self.items[index1] = item2
+		self.items[index2] = item1
 
 	def write(self):
 		self.favoriteservers["CustomListItems"] = self.items
