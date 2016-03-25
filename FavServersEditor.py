@@ -27,7 +27,13 @@ class FavoriteServers(object):
 		self.labels.append(label)
 
 	def remove(self, label):
-		pass
+		if label not in self.labels:
+			return
+		for item in reversed(self.items):
+			if item["Name"] == label:
+				self.items.remove(item)
+				self.labels.remove(label)
+				return
 
 	def removeAll(self):
 		pass
