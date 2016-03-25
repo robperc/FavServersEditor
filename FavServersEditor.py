@@ -34,7 +34,8 @@ class FavoriteServers(object):
 				return
 
 	def removeAll(self):
-		pass
+		self.items[:]  = []
+		self.labels[:] = []
 
 	def move(self, label, index):
 		pass
