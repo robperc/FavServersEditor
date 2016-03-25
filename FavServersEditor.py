@@ -38,7 +38,18 @@ class FavoriteServers(object):
 		self.labels[:] = []
 
 	def move(self, label, index):
-		pass
+		if label not in self.labels:
+			return
+		if index > len(self.items) or index == -1:
+			index = len(self.items)
+		elif index < -1:
+			index = 0
+		for item in self.items:
+			if item['Name'] == title:
+				to_mv = item
+				break
+		self.items.remove(item)
+		self.items.insert(index, to_mv)
 
 	def swap(self, label1, label2):
 		pass
