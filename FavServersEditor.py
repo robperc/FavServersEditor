@@ -10,7 +10,7 @@ class FavoriteServers(object):
 		self.id              = "com.apple.sidebarlists"
 		self.favoriteservers = NSMutableDictionary.alloc().initWithDictionary_copyItems_(CoreFoundation.CFPreferencesCopyAppValue("favoriteservers", self.id), True)
 		self.items           = self.favoriteservers["CustomListItems"] if self.favoriteservers.get("CustomListItems") is not None else list()
-		self.labels          = [server["Name"] for server in self.servers]
+		self.labels          = [item["Name"] for item in self.items]
 
 	def add(self, label, uri):
 		pass
