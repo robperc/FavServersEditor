@@ -1,5 +1,3 @@
-import os
-import uuid
 import CoreFoundation
 from Foundation import NSMutableDictionary, NSMutableArray
 
