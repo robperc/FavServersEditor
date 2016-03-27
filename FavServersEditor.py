@@ -65,6 +65,7 @@ class FavoriteServers(object):
 		self.items[index2] = item1
 
 	def write(self):
+		self.favoriteservers["Controller"]      = "CustomListItems"
 		self.favoriteservers["CustomListItems"] = self.items
 		CoreFoundation.CFPreferencesSetAppValue("favoriteservers", self.favoriteservers,  self.id)
 		CoreFoundation.CFPreferencesAppSynchronize(self.id)
