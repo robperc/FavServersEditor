@@ -1,6 +1,5 @@
 import CoreFoundation
-from Foundation import NSMutableDictionary, NSMutableArray
-
+from Foundation import NSMutableDictionary, NSDictionary, NSMutableArray, NSString
 
 class FavoriteServers(object):
 
@@ -17,9 +16,11 @@ class FavoriteServers(object):
 			index = len(self.items)
 		elif index < -1:
 			index = 0
-		new_item = dict(
-			Name=label,
-			URL=uri
+		new_item = NSDictionary.alloc().initWithDictionary_(
+			dict(
+				Name=NSString.alloc().initWithString_(label), 
+				URL=NSString.alloc().initWithString_(uri)
+			)
 		)
 		self.items.insert(index, new_item)
 		self.labels.append(label)
@@ -65,7 +66,7 @@ class FavoriteServers(object):
 		self.items[index2] = item1
 
 	def write(self):
-		self.favoriteservers["Controller"]      = "CustomListItems"
+		self.favoriteservers["Controller"]      = NSString.alloc().initWithString_("CustomListItems")
 		self.favoriteservers["CustomListItems"] = self.items
 		CoreFoundation.CFPreferencesSetAppValue("favoriteservers", self.favoriteservers,  self.id)
 		CoreFoundation.CFPreferencesAppSynchronize(self.id)
