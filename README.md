@@ -22,4 +22,4 @@ servers.write()                                 # Write changes
 ## Notes
 
 - Changes made to the favorites may require logout / login to appear. Consider using the module in a script meant for [Outset](https://github.com/chilcote/outset) to avoid this issue.
-- In 10.11 the introduction of '.sfl' files and 'SFLListItem's means the hip way of editing these favorites would be something like [Mike Lynn's approach](https://gist.github.com/pudquick/b85fcfd4a0479810e6aa).
+- In 10.11 the introduction of '.sfl' files and 'SFLListItem's means the hip way of editing these favorites would be something like [Mike Lynn's approach](https://gist.github.com/pudquick/b85fcfd4a0479810e6aa), however keep in mind that that approach will not work backwards compatibly with any OS before 10.11.
