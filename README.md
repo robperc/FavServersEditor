@@ -1,3 +1,5 @@
+# As of 10.12 this implementation has broken. See the Notes for Mike Lynn's SFLListItem based approach.
+
 # FavServersEditor
 Python module for easily adding, removing, and moving favorite servers in the "Connect to Server" window.
 
